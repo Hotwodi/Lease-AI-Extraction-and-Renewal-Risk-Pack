@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lae_extraction_job,lae.extraction.job,model_lae_extraction_job,base.group_user,1,1,1,1
+access_lae_lease_field,lae.lease.field,model_lae_lease_field,base.group_user,1,1,1,1
+access_lae_renewal_risk,lae.renewal.risk,model_lae_renewal_risk,base.group_user,1,1,1,1
+access_lae_critical_date,lae.critical.date,model_lae_critical_date,base.group_user,1,1,1,1
+access_lae_lease_comparison,lae.lease.comparison,model_lae_lease_comparison,base.group_user,1,1,1,1

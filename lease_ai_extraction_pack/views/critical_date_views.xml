@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_lae_critical_date_tree" model="ir.ui.view">
+            <field name="name">lae.critical.date.tree</field>
+            <field name="model">lae.critical.date</field>
+            <field name="arch" type="xml">
+                <tree string="Critical Dates"
+                      decoration-success="state == 'completed'"
+                      decoration-info="state == 'upcoming'"
+                      decoration-warning="state == 'due'"
+                      decoration-danger="state == 'overdue'">
+                    <field name="name"/>
+                    <field name="lease_id"/>
+                    <field name="date_type"/>
+                    <field name="critical_date"/>
+                    <field name="days_until"/>
+                    <field name="ai_priority"/>
+                    <field name="alert_sent" widget="boolean_toggle"/>
+                    <field name="state" widget="badge"
+                           decoration-info="state == 'upcoming'"
+                           decoration-warning="state == 'due'"
+                           decoration-danger="state == 'overdue'"
+                           decoration-success="state == 'completed'"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_lae_critical_date_form" model="ir.ui.view">
+            <field name="name">lae.critical.date.form</field>
+            <field name="model">lae.critical.date</field>
+            <field name="arch" type="xml">
+                <form string="Critical Date">
+                    <header>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="upcoming,due,overdue,completed"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="lease_id"/>
+                                <field name="date_type"/>
+                                <field name="critical_date"/>
+                                <field name="days_until_expiry" invisible="1"/>
+                                <field name="days_until"/>
+                            </group>
+                            <group>
+                                <field name="ai_priority"/>
+                                <field name="alert_sent" widget="boolean_toggle"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_lae_critical_date" model="ir.actions.act_window">
+            <field name="name">Critical Dates</field>
+            <field name="res_model">lae.critical.date</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new critical date
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

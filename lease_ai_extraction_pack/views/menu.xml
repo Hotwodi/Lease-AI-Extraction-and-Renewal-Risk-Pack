@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Root Menu -->
+        <menuitem id="menu_lae_root"
+                  name="Lease AI Extraction"
+                  sequence="10"
+                  web_icon="lease_ai_extraction_pack,static/description/icon.png"/>
+
+        <!-- Submenus -->
+        <menuitem id="menu_lae_extraction_jobs"
+                  name="Extraction Jobs"
+                  parent="menu_lae_root"
+                  sequence="10"
+                  action="action_lae_extraction_job"/>
+
+        <menuitem id="menu_lae_extracted_fields"
+                  name="Extracted Fields"
+                  parent="menu_lae_root"
+                  sequence="20"
+                  action="action_lae_lease_field"/>
+
+        <menuitem id="menu_lae_renewal_risk"
+                  name="Renewal Risk"
+                  parent="menu_lae_root"
+                  sequence="30"
+                  action="action_lae_renewal_risk"/>
+
+        <menuitem id="menu_lae_critical_dates"
+                  name="Critical Dates"
+                  parent="menu_lae_root"
+                  sequence="40"
+                  action="action_lae_critical_date"/>
+
+        <menuitem id="menu_lae_lease_comparison"
+                  name="Lease Comparison"
+                  parent="menu_lae_root"
+                  sequence="50"
+                  action="action_lae_lease_comparison"/>
+    </data>
+</odoo>
