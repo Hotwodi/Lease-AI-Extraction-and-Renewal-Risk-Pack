@@ -6,7 +6,7 @@
             <field name="name">lae.renewal.risk.tree</field>
             <field name="model">lae.renewal.risk</field>
             <field name="arch" type="xml">
-                <tree string="Renewal Risk Assessments"
+                <list string="Renewal Risk Assessments"
                       decoration-success="risk_level == 'low'"
                       decoration-info="risk_level == 'medium'"
                       decoration-warning="risk_level == 'high'"
@@ -23,7 +23,7 @@
                            decoration-warning="risk_level == 'high'"
                            decoration-danger="risk_level == 'critical'"/>
                     <field name="ai_recommendation"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -73,7 +73,7 @@
         <record id="action_lae_renewal_risk" model="ir.actions.act_window">
             <field name="name">Renewal Risk</field>
             <field name="res_model">lae.renewal.risk</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                     Create a new renewal risk assessment

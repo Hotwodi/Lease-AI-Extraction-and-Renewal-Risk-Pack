@@ -6,7 +6,7 @@
             <field name="name">lae.extraction.job.tree</field>
             <field name="model">lae.extraction.job</field>
             <field name="arch" type="xml">
-                <tree string="Extraction Jobs">
+                <list string="Extraction Jobs">
                     <field name="name"/>
                     <field name="document_type"/>
                     <field name="state" widget="badge"
@@ -20,7 +20,7 @@
                     <field name="extracted_field_count"/>
                     <field name="created_by"/>
                     <field name="created_date"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -56,7 +56,7 @@
                         <notebook>
                             <page string="Extracted Fields" name="extracted_fields">
                                 <field name="field_ids">
-                                    <tree editable="bottom">
+                                    <list editable="bottom">
                                         <field name="field_category"/>
                                         <field name="field_name"/>
                                         <field name="field_value"/>
@@ -64,7 +64,7 @@
                                         <field name="page_reference"/>
                                         <field name="verified"/>
                                         <field name="corrected_value"/>
-                                    </tree>
+                                    </list>
                                 </field>
                             </page>
                         </notebook>
@@ -81,7 +81,7 @@
         <record id="action_lae_extraction_job" model="ir.actions.act_window">
             <field name="name">Extraction Jobs</field>
             <field name="res_model">lae.extraction.job</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                     Create a new extraction job
