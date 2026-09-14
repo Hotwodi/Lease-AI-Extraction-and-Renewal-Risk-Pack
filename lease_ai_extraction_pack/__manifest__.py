@@ -13,7 +13,7 @@ Extract lease data with AI, assess renewal risk, track critical dates, and compa
     'author': 'SoftaiDev',
     'website': 'https://softaidev.pages.dev',
     'license': 'LGPL-3',
-    'price': 499.99,
+    'price': 500.00,
     'currency': 'USD',
     'depends': ['base', 'web', 'mail'],
     'application': True,
